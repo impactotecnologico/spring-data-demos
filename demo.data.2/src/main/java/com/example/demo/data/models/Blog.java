@@ -1,8 +1,13 @@
 package com.example.demo.data.models;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 public class Blog {
@@ -15,7 +20,11 @@ public class Blog {
 	
 	private String contenido;
 	
-	
+	@CreationTimestamp
+    private LocalDateTime createDateTime;
+ 
+    @UpdateTimestamp
+    private LocalDateTime updateDateTime;
 
 	public Blog(int id, String titulo, String contenido) {
 		super();
@@ -50,8 +59,11 @@ public class Blog {
 
 	@Override
 	public String toString() {
-		return "Blog [id=" + id + ", titulo=" + titulo + ", contenido=" + contenido + "]";
+		return "Blog [id=" + id + ", titulo=" + titulo + ", contenido=" + contenido + ", createDateTime="
+				+ createDateTime + ", updateDateTime=" + updateDateTime + "]";
 	}
+
+	
 	
 	
 
