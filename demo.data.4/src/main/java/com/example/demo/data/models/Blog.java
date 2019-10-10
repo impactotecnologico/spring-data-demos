@@ -30,7 +30,7 @@ public class Blog {
 
 	private String titulo;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "blog", orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "blog")
 	// @OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
 	private Set<Entrada> entradas;
 
